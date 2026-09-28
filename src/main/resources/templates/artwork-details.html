@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Artwork Details | Art Gallery Management System</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<!-- =========================
+        Navigation Bar
+========================== -->
+
+<nav>
+
+    <a th:href="@{/}" class="logo">
+        🎨 Art Gallery
+    </a>
+
+    <ul>
+
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/gallery}">Gallery</a></li>
+        <li><a th:href="@{/artists}">Artists</a></li>
+        <li><a th:href="@{/about}">About</a></li>
+        <li><a th:href="@{/contact}">Contact</a></li>
+        <li><a th:href="@{/admin}">Admin</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- =========================
+        Banner
+========================== -->
+
+<section class="gallery-hero">
+
+    <h1>Artwork Details</h1>
+
+    <p>
+        Discover the story, artist and details behind this beautiful artwork.
+    </p>
+
+</section>
+
+<!-- =========================
+      Artwork Details
+========================== -->
+
+<section class="details-section">
+
+    <div class="details-container">
+
+        <!-- Artwork Image -->
+
+        <img
+                th:src="@{/images/artworks/{img}(img=${artwork.image})}"
+                th:alt="${artwork.title}">
+
+        <!-- Artwork Information -->
+
+        <div class="details-content">
+
+            <h2 th:text="${artwork.title}">
+                Artwork Title
+            </h2>
+
+            <h3>
+
+                <a
+                        th:href="@{/artists}"
+                        th:text="${artwork.artist}">
+                </a>
+
+            </h3>
+
+            <p>
+
+                <strong>🎨 Category:</strong>
+
+                <span th:text="${artwork.category}">
+                    Category
+                </span>
+
+            </p>
+
+            <p>
+
+                <strong>📝 Description:</strong>
+
+                <span th:text="${artwork.description}">
+                    Artwork description goes here.
+                </span>
+
+            </p>
+
+            <p>
+
+                <strong>💰 Price:</strong>
+
+                ₹ <span th:text="${artwork.price}">
+                    0
+                </span>
+
+            </p>
+
+            <br>
+
+            <a
+                    th:href="@{/gallery}"
+                    class="back-btn">
+
+                ← Back to Gallery
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+            Footer
+========================== -->
+
+<footer class="footer">
+
+    <p>
+
+        © 2026 Art Gallery Management System
+
+        <br><br>
+
+        Built with Java • Spring Boot • Thymeleaf • HTML5 • CSS3 • JavaScript • MySQL
+
+    </p>
+
+</footer>
+
+</body>
+
+</html>

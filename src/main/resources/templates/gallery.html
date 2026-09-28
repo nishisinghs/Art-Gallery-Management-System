@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Gallery | Art Gallery Management System</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<!-- =========================
+        Navigation Bar
+========================== -->
+
+<nav>
+
+    <a th:href="@{/}" class="logo">
+        🎨 Art Gallery
+    </a>
+
+    <ul>
+
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/gallery}">Gallery</a></li>
+        <li><a th:href="@{/artists}">Artists</a></li>
+        <li><a th:href="@{/about}">About</a></li>
+        <li><a th:href="@{/contact}">Contact</a></li>
+        <li><a th:href="@{/admin}">Admin</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- =========================
+        Gallery Banner
+========================== -->
+
+<section class="gallery-hero">
+
+    <h1>Explore Our Collection</h1>
+
+    <p>
+        Discover beautiful paintings and artworks created by talented artists
+        from different styles and categories.
+    </p>
+
+</section>
+
+<!-- =========================
+        Gallery Section
+========================== -->
+
+<section class="featured">
+
+    <h2>Browse Artworks</h2>
+
+    <!-- Search Form -->
+
+    <form th:action="@{/gallery}" method="get" class="search-form">
+
+        <input
+                type="text"
+                name="keyword"
+                placeholder="Search by artwork title or artist..."
+                th:value="${keyword}">
+
+        <select name="category">
+
+            <option value="">All Categories</option>
+
+            <option value="Abstract"
+                    th:selected="${category == 'Abstract'}">
+                Abstract
+            </option>
+
+            <option value="Landscape"
+                    th:selected="${category == 'Landscape'}">
+                Landscape
+            </option>
+
+            <option value="Modern"
+                    th:selected="${category == 'Modern'}">
+                Modern
+            </option>
+
+        </select>
+
+        <button type="submit">
+            🔍 Search
+        </button>
+
+    </form>
+
+    <!-- No Results -->
+
+    <div
+            th:if="${#lists.isEmpty(artworks)}"
+            style="text-align:center;margin-top:40px;font-size:22px;">
+
+        No artworks found.
+
+    </div>
+
+    <!-- Artwork Cards -->
+
+    <div class="artwork-container">
+
+        <div class="card"
+             th:each="artwork : ${artworks}">
+
+            <img
+                    th:src="@{/images/artworks/{img}(img=${artwork.image})}"
+                    th:alt="${artwork.title}">
+
+            <div class="card-content">
+
+                <h3 th:text="${artwork.title}">
+                    Artwork Title
+                </h3>
+
+                <p>
+
+                    <strong>Artist:</strong>
+
+                    <span th:text="${artwork.artist}"></span>
+
+                </p>
+
+                <p>
+
+                    <strong>Category:</strong>
+
+                    <span th:text="${artwork.category}"></span>
+
+                </p>
+
+                <p th:text="${artwork.description}">
+
+                    Artwork Description
+
+                </p>
+                <p class="price">
+                    <span class="currency">₹</span>
+                    <span th:text="${artwork.price}"></span>
+                </p>
+                <a
+                        th:href="@{/artwork/{id}(id=${artwork.id})}"
+                        class="view-btn">
+
+                    View Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+            Footer
+========================== -->
+
+<footer class="footer">
+
+    <p>
+
+        © 2026 Art Gallery Management System
+
+        <br><br>
+
+        Built with Java • Spring Boot • Thymeleaf • HTML5 • CSS3 • JavaScript • MySQL
+
+    </p>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Add Artwork | Art Gallery Management System</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<!-- ==========================
+        Navigation
+========================== -->
+
+<nav>
+
+    <a th:href="@{/}" class="logo">
+        🎨 Art Gallery
+    </a>
+
+    <ul>
+
+        <li><a th:href="@{/admin}">Dashboard</a></li>
+
+        <li><a th:href="@{/gallery}">Gallery</a></li>
+
+        <li>
+
+            <form th:action="@{/logout}"
+                  method="post"
+                  style="display:inline;">
+
+                <button type="submit"
+                        class="logout-btn">
+
+                    Logout
+
+                </button>
+
+            </form>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- ==========================
+         Hero Section
+========================== -->
+
+<section class="admin-hero">
+
+    <h1>Artwork Management</h1>
+
+    <p>
+
+        Add a new artwork or update an existing one.
+
+    </p>
+
+</section>
+
+<!-- ==========================
+        Artwork Form
+========================== -->
+
+<section class="form-container">
+
+    <h2>Add / Edit Artwork</h2>
+
+    <p style="text-align:center;
+              margin-bottom:30px;
+              color:#666;">
+
+        Fill in the artwork details below.
+
+    </p>
+
+    <form th:action="@{/admin/save}"
+
+          th:object="${artwork}"
+
+          method="post">
+
+        <input type="hidden"
+               th:field="*{id}">
+
+        <!-- Title -->
+
+        <div class="form-group">
+
+            <label>Artwork Title</label>
+
+            <input type="text"
+
+                   th:field="*{title}"
+
+                   placeholder="e.g. Golden Horizon"
+
+                   required>
+
+        </div>
+
+        <!-- Artist -->
+
+        <div class="form-group">
+
+            <label>Artist Name</label>
+
+            <input type="text"
+
+                   th:field="*{artist}"
+
+                   placeholder="e.g. Emma Wilson"
+
+                   required>
+
+        </div>
+
+        <!-- Category -->
+
+        <div class="form-group">
+
+            <label>Category</label>
+
+            <input type="text"
+
+                   th:field="*{category}"
+
+                   placeholder="Landscape, Modern, Abstract..."
+
+                   required>
+
+        </div>
+
+        <!-- Price -->
+
+        <div class="form-group">
+
+            <label>Price (₹)</label>
+
+            <input type="number"
+
+                   th:field="*{price}"
+
+                   placeholder="25000"
+
+                   required>
+
+        </div>
+
+        <!-- Image -->
+
+        <div class="form-group">
+
+            <label>Image Filename</label>
+
+            <input type="text"
+
+                   th:field="*{image}"
+
+                   placeholder="example.jpg"
+
+                   required>
+
+            <small>
+
+                Store the image inside
+                <strong>resources/static/images/artworks/</strong>
+
+                and enter only the filename
+                (Example: <strong>art1.jpg</strong>)
+
+            </small>
+
+        </div>
+
+        <!-- Description -->
+
+        <div class="form-group">
+
+            <label>Description</label>
+
+            <textarea
+
+                    th:field="*{description}"
+
+                    rows="5"
+
+                    placeholder="Write a short description of the artwork..."
+
+                    required>
+
+            </textarea>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="form-buttons">
+
+            <button type="submit"
+                    class="save-btn">
+
+                💾 Save Artwork
+
+            </button>
+
+            <a th:href="@{/admin}"
+
+               class="cancel-btn">
+
+                Cancel
+
+            </a>
+
+        </div>
+
+    </form>
+
+</section>
+
+<!-- ==========================
+           Footer
+========================== -->
+
+<footer class="footer">
+
+    <p>
+
+        © 2026 Art Gallery Management System
+
+        <br><br>
+
+        Built with Java • Spring Boot • Thymeleaf • HTML5 • CSS3 • JavaScript • MySQL
+
+    </p>
+
+</footer>
+
+</body>
+
+</html>

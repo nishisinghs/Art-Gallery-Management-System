@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Admin Login | Art Gallery Management System</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<!-- ==========================
+        Login Container
+========================== -->
+
+<div class="login-container">
+
+    <div class="login-box">
+
+        <h2>🎨 Art Gallery Admin</h2>
+
+        <p style="margin-bottom:25px; color:#666;">
+
+            Please sign in to access the Admin Dashboard.
+
+        </p>
+
+        <!-- Login Error -->
+
+        <div th:if="${param.error}"
+
+             style="background:#ffebee;
+                    color:#c62828;
+                    padding:12px;
+                    border-radius:8px;
+                    margin-bottom:20px;">
+
+            Invalid username or password.
+
+        </div>
+
+        <!-- Logout Success -->
+
+        <div th:if="${param.logout}"
+
+             style="background:#e8f5e9;
+                    color:#2e7d32;
+                    padding:12px;
+                    border-radius:8px;
+                    margin-bottom:20px;">
+
+            You have been logged out successfully.
+
+        </div>
+
+        <!-- Login Form -->
+
+        <form th:action="@{/login}"
+
+              method="post">
+
+            <input type="text"
+
+                   name="username"
+
+                   placeholder="👤 Username"
+
+                   required>
+
+            <input type="password"
+
+                   name="password"
+
+                   placeholder="🔒 Password"
+
+                   required>
+
+            <button type="submit">
+
+                Login
+
+                <span class="loading"></span>
+
+            </button>
+
+        </form>
+
+        <br>
+
+        <p style="font-size:14px; color:#888;">
+
+            This area is restricted to authorized
+            administrators only.
+
+        </p>
+
+        <br>
+
+        <a th:href="@{/}"
+
+           class="cancel-btn"
+
+           style="display:inline-block;">
+
+            ← Back to Home
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- ==========================
+            Footer
+========================== -->
+
+<footer class="footer">
+
+    <p>
+
+        © 2026 Art Gallery Management System
+
+        <br><br>
+
+        Built with Java • Spring Boot • Thymeleaf • HTML5 • CSS3 • JavaScript • MySQL
+
+    </p>
+
+</footer>
+
+</body>
+
+</html>

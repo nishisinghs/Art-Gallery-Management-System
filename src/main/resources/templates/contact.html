@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Contact | Art Gallery Management System</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<!-- ==========================
+        Navigation Bar
+=========================== -->
+
+<nav>
+
+    <a th:href="@{/}" class="logo">
+
+        🎨 Art Gallery
+
+    </a>
+
+    <ul>
+
+        <li><a th:href="@{/}">Home</a></li>
+
+        <li><a th:href="@{/gallery}">Gallery</a></li>
+
+        <li><a th:href="@{/artists}">Artists</a></li>
+
+        <li><a th:href="@{/about}">About</a></li>
+
+        <li><a th:href="@{/contact}">Contact</a></li>
+
+        <li><a th:href="@{/admin}">Admin</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- ==========================
+          Hero Banner
+=========================== -->
+
+<section class="gallery-hero">
+
+    <h1>Get in Touch</h1>
+
+    <p>
+
+        We'd love to hear from you.
+        Send us your questions, feedback or artwork enquiries.
+
+    </p>
+
+</section>
+
+<!-- ==========================
+       Contact Section
+=========================== -->
+
+<section class="contact-section">
+
+    <h1>Contact Us</h1>
+
+    <p style="text-align:center; margin-bottom:30px; color:#666;">
+
+        Have a question about an artwork or exhibition?
+
+        Fill out the form below and we'll get back to you as soon as possible.
+
+    </p>
+
+    <!-- Success Message -->
+
+    <p class="success-message"
+
+       th:if="${success}"
+
+       th:text="${success}">
+
+    </p>
+
+    <!-- Contact Form -->
+
+    <form th:action="@{/contact}"
+
+          th:object="${contact}"
+
+          method="post"
+
+          class="contact-form">
+
+        <input type="text"
+
+               th:field="*{name}"
+
+               placeholder="Your Name"
+
+               required>
+
+        <input type="email"
+
+               th:field="*{email}"
+
+               placeholder="Your Email"
+
+               required>
+
+        <input type="text"
+
+               th:field="*{subject}"
+
+               placeholder="Subject"
+
+               required>
+
+        <textarea
+
+                th:field="*{message}"
+
+                placeholder="Write your message here..."
+
+                rows="6"
+
+                required>
+
+        </textarea>
+
+        <button type="submit">
+
+            Send Message
+
+            <span class="loading"></span>
+
+        </button>
+
+    </form>
+
+    <br><br>
+
+    <hr>
+
+    <br>
+
+    <!-- Contact Information -->
+
+    <div class="contact-info">
+
+        <h2 style="text-align:center; margin-bottom:20px;">
+
+            Gallery Information
+
+        </h2>
+
+        <p>
+
+            <strong>📍 Address:</strong>
+
+            Art Gallery Management System,
+            Bengaluru, Karnataka, India
+
+        </p>
+
+        <br>
+
+        <p>
+
+            <strong>📧 Email:</strong>
+
+            info@artgallery.com
+
+        </p>
+
+        <br>
+
+        <p>
+
+            <strong>📞 Phone:</strong>
+
+            +91 98765 43210
+
+        </p>
+
+        <br>
+
+        <p>
+
+            <strong>🕒 Working Hours:</strong>
+
+            Monday – Saturday
+
+            10:00 AM – 6:00 PM
+
+        </p>
+
+        <br>
+
+        <p>
+
+            We usually respond to all enquiries within
+            <strong>24 hours.</strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+            Footer
+=========================== -->
+
+<footer class="footer">
+
+    <p>
+
+        © 2026 Art Gallery Management System
+
+        <br><br>
+
+        Built with Java • Spring Boot • Thymeleaf • HTML5 • CSS3 • JavaScript • MySQL
+
+    </p>
+
+</footer>
+
+</body>
+
+</html>

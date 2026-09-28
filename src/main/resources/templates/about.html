@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>About Us | Art Gallery Management System</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<!-- ==========================
+        Navigation Bar
+=========================== -->
+
+<nav>
+
+    <a th:href="@{/}" class="logo">
+        🎨 Art Gallery
+    </a>
+
+    <ul>
+
+        <li><a th:href="@{/}">Home</a></li>
+
+        <li><a th:href="@{/gallery}">Gallery</a></li>
+
+        <li><a th:href="@{/artists}">Artists</a></li>
+
+        <li><a th:href="@{/about}">About</a></li>
+
+        <li><a th:href="@{/contact}">Contact</a></li>
+
+        <li><a th:href="@{/admin}">Admin</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- ==========================
+        Hero Banner
+=========================== -->
+
+<section class="gallery-hero">
+
+    <h1>About Our Art Gallery</h1>
+
+    <p>
+
+        Celebrating creativity by connecting talented artists
+        with art lovers through an elegant online platform.
+
+    </p>
+
+</section>
+
+<!-- ==========================
+        About Section
+=========================== -->
+
+<section class="about-section">
+
+    <div class="about-container">
+
+        <h1>Art Gallery Management System</h1>
+
+        <p>
+
+            The <strong>Art Gallery Management System</strong> is a modern
+            web-based application designed to simplify the management of
+            artworks, artists, exhibitions, and customer interactions.
+            Visitors can easily browse beautiful artwork collections,
+            discover talented artists, and contact the gallery, while
+            administrators can securely manage all gallery content through
+            an intuitive dashboard.
+
+        </p>
+
+        <h2>Our Mission</h2>
+
+        <p>
+
+            Our mission is to make art more accessible by providing a
+            digital platform where creativity can be shared with everyone.
+            We aim to create a smooth and engaging experience for visitors
+            while helping gallery administrators efficiently organize
+            artworks and exhibitions.
+
+        </p>
+
+        <h2>Project Objectives</h2>
+
+        <ul>
+
+            <li>Provide an easy way to browse artworks online.</li>
+
+            <li>Allow visitors to search artworks by title or artist.</li>
+
+            <li>Enable category-based artwork filtering.</li>
+
+            <li>Provide detailed information about every artwork.</li>
+
+            <li>Allow visitors to contact the gallery directly.</li>
+
+            <li>Provide administrators with a secure management panel.</li>
+
+        </ul>
+
+        <h2>Key Features</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <h3>🎨 Browse Artworks</h3>
+
+                <p>
+
+                    Explore a collection of paintings with images,
+                    artist information, categories and pricing.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>🔍 Search & Filter</h3>
+
+                <p>
+
+                    Quickly locate artworks using keyword search
+                    and category filters.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>🖼 Artwork Details</h3>
+
+                <p>
+
+                    View complete information including artist,
+                    description, category and price.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>📩 Contact Gallery</h3>
+
+                <p>
+
+                    Send enquiries directly to the gallery using
+                    the contact form.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>⚙ Admin Dashboard</h3>
+
+                <p>
+
+                    Securely add, edit and remove artworks
+                    through the administration panel.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>💬 Message Management</h3>
+
+                <p>
+
+                    View and manage customer enquiries directly
+                    from the admin dashboard.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <h2>Technology Stack</h2>
+
+        <ul>
+
+            <li><strong>Backend:</strong> Java & Spring Boot</li>
+
+            <li><strong>Frontend:</strong> HTML, CSS & Thymeleaf</li>
+
+            <li><strong>Database:</strong> MySQL</li>
+
+            <li><strong>Security:</strong> Spring Security</li>
+
+            <li><strong>ORM:</strong> Spring Data JPA (Hibernate)</li>
+
+        </ul>
+
+        <h2>Why Choose Our Gallery?</h2>
+
+        <p>
+
+            We combine beautiful artwork presentation with modern web
+            technologies to deliver a fast, secure and user-friendly
+            experience. Whether you're exploring artwork, discovering
+            talented artists or managing gallery content, our platform
+            provides everything in one place.
+
+        </p>
+
+        <h2>Conclusion</h2>
+
+        <p>
+
+            This project demonstrates the development of a complete
+            full-stack web application using Spring Boot and MySQL.
+            It offers an attractive experience for visitors while
+            providing administrators with powerful management tools
+            for efficiently maintaining an art gallery.
+
+        </p>
+
+        <br><br>
+
+        <a th:href="@{/gallery}" class="view-btn">
+
+            Explore Our Gallery
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+          Footer
+=========================== -->
+
+<footer class="footer">
+
+    <p>
+
+        © 2026 Art Gallery Management System
+
+        <br><br>
+
+        Built with Java • Spring Boot • Thymeleaf • HTML5 • CSS3 • JavaScript • MySQL
+
+    </p>
+
+</footer>
+
+</body>
+
+</html>

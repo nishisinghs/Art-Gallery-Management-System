@@ -1,0 +1,1440 @@
+/*==================================================
+        ART GALLERY MANAGEMENT SYSTEM
+              STYLE.CSS (PART 1)
+==================================================*/
+
+/*==================================================
+                GOOGLE FONT
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*==================================================
+                RESET
+==================================================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+html{
+    scroll-behavior:smooth;
+}
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8f8f8;
+    color:#333;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+/*==================================================
+                LINKS
+==================================================*/
+a{
+    text-decoration:none;
+    color:inherit;
+}
+img{
+    display:block;
+    max-width:100%;
+}
+/*==================================================
+                NAVIGATION BAR
+==================================================*/
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:#111;
+    box-shadow:0 4px 15px rgba(0,0,0,.18);
+}
+.logo{
+    font-size:34px;
+    font-weight:700;
+    color:white;
+    transition:.35s;
+}
+.logo:hover{
+    color:#ffb400;
+    transform:scale(1.05);
+}
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+nav ul li a{
+    color:white;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+}
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#ffb400;
+    transition:.35s;
+}
+nav ul li a:hover{
+    color:#ffb400;
+}
+nav ul li a:hover::after{
+    width:100%;
+}
+/*==================================================
+                HERO SECTION
+==================================================*/
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+        linear-gradient(rgba(0,0,0,.55),
+        rgba(0,0,0,.55)),
+        url("/images/hero/hero.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+.overlay{
+    max-width:850px;
+    padding:20px;
+}
+.hero h1{
+    font-size:64px;
+    margin-bottom:25px;
+    animation:slideDown 1s ease;
+}
+.hero p{
+    font-size:22px;
+    color:#f1f1f1;
+    margin-bottom:45px;
+    line-height:1.8;
+    animation:fadeText 1.2s ease;
+}
+/*==================================================
+                HERO BUTTONS
+==================================================*/
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    animation:fadeButtons 1.4s ease;
+}
+.primary-btn{
+    background:#ffb400;
+    color:#111;
+    padding:15px 35px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.35s;
+}
+.primary-btn:hover{
+    background:white;
+    transform:translateY(-4px);
+    box-shadow:0 12px 25px rgba(0,0,0,.2);
+}
+.secondary-btn{
+    background:transparent;
+    color:white;
+    border:2px solid white;
+    padding:15px 35px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.35s;
+}
+.secondary-btn:hover{
+    background:white;
+    color:#111;
+    transform:translateY(-4px);
+}
+/*==================================================
+            COMMON SECTION STYLING
+==================================================*/
+section{
+    padding:90px 8%;
+}
+section h2{
+    text-align:center;
+    font-size:46px;
+    color:#222;
+    margin-bottom:20px;
+}
+.section-subtitle{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 60px;
+    color:#666;
+    font-size:18px;
+    line-height:1.8;
+}
+/*==================================================
+            PAGE HERO (GENERAL)
+==================================================*/
+.gallery-hero,
+.admin-hero{
+    background:
+        linear-gradient(rgba(0,0,0,.60),
+        rgba(0,0,0,.60)),
+        url("/images/hero/hero.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:140px 20px;
+}
+.gallery-hero h1,
+.admin-hero h1{
+    font-size:58px;
+    margin-bottom:20px;
+}
+.gallery-hero p,
+.admin-hero p{
+    max-width:800px;
+    margin:auto;
+    font-size:21px;
+    line-height:1.8;
+    color:#f1f1f1;
+}
+/*==================================================
+            PAGE TITLE
+==================================================*/
+.page-title{
+    text-align:center;
+    font-size:48px;
+    color:#222;
+    margin-bottom:50px;
+}
+/*==================================================
+            ANIMATIONS
+==================================================*/
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+@keyframes fadeText{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+@keyframes fadeButtons{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/*==================================================
+              STYLE.CSS (PART 2)
+     FEATURED ARTWORKS • ARTISTS • EXHIBITIONS
+==================================================*/
+
+/*==================================================
+            FEATURED ARTWORKS
+==================================================*/
+.featured{
+    background:#faf8f4;
+    padding:90px 8%;
+}
+.artwork-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,330px));
+    justify-content:center;
+    gap:50px;
+}
+.card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.10);
+    transition:.35s;
+    display:flex;
+    flex-direction:column;
+    max-width:330px;
+    width:100%;
+}
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
+}
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    transition:.45s;
+}
+.card:hover img{
+    transform:scale(1.06);
+}
+.card-content{
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+.card-content h3{
+    font-size:26px;
+    color:#222;
+    margin-bottom:10px;
+}
+.card-content p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:12px;
+}
+.card-content p:last-of-type{
+    color:#ff9800;
+    font-size:22px;
+    font-weight:700;
+}
+/* Artwork Price */
+.price{
+    font-size:22px;
+    font-weight:700;
+    color:#222;
+    margin:18px 0;
+}
+.price span{
+    color:#ffb400;
+}
+.view-btn{
+    margin-top:auto;
+    align-self:flex-start;
+    background:#ffb400;
+    color:#111;
+    padding:12px 26px;
+    border-radius:35px;
+    font-weight:600;
+    transition:.3s;
+}
+.view-btn:hover{
+    background:#111;
+    color:white;
+}
+/*==================================================
+            GALLERY HIGHLIGHTS
+==================================================*/
+.highlights{
+    background:#fff;
+    padding:90px 8%;
+    text-align:center;
+}
+.highlights h2{
+    font-size:42px;
+    margin-bottom:60px;
+    color:#222;
+}
+.highlight-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:35px;
+}
+.highlight-card{
+    background:white;
+    border-radius:20px;
+    padding:40px 30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.35s;
+}
+.highlight-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+}
+.highlight-icon{
+    font-size:55px;
+    margin-bottom:20px;
+}
+.highlight-card h3{
+    font-size:42px;
+    color:#ffb400;
+    margin-bottom:10px;
+}
+.highlight-card p{
+    font-size:20px;
+    color:#666;
+}
+/*==================================================
+                ARTISTS
+==================================================*/
+.artists{
+    background:#f5f5f5;
+}
+.artist-container{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    flex-wrap:wrap;
+    margin-top:60px;
+}
+.artist-card{
+    width:340px;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+    transition:.35s;
+    display:flex;
+    flex-direction:column;
+}
+.artist-card:hover{
+    transform:translateY(-10px);
+}
+.artist-card img{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    transition:.45s;
+}
+.artist-card:hover img{
+    transform:scale(1.05);
+}
+.artist-card h3{
+    padding:22px 20px 10px;
+    font-size:28px;
+    color:#222;
+}
+.artist-card p{
+    padding:0 20px 30px;
+    color:#666;
+    line-height:1.8;
+}
+.artist-info{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+.artist-info .view-btn{
+    margin-top:auto;
+    align-self:flex-start;
+}
+/*==================================================
+          UPCOMING EXHIBITIONS
+==================================================*/
+.exhibitions{
+    background:#faf8f4;
+}
+.exhibition-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+    margin-top:60px;
+}
+.exhibition-card{
+    background:white;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.10);
+    transition:.35s;
+}
+.exhibition-card:hover{
+    transform:translateY(-10px);
+}
+.exhibition-card h3{
+    font-size:28px;
+    color:#222;
+    margin-bottom:20px;
+}
+.exhibition-card p{
+    color:#666;
+    margin-bottom:14px;
+    line-height:1.8;
+}
+.exhibition-card .view-btn{
+    margin-top:25px;
+}
+/*==================================================
+            COMMON CARD EFFECT
+==================================================*/
+.card,
+.artist-card,
+.highlight-card,
+.exhibition-card{
+    cursor:pointer;
+}
+.card::before,
+.artist-card::before,
+.highlight-card::before,
+.exhibition-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+/*==================================================
+           SECTION DIVIDERS
+==================================================*/
+.featured,
+.highlights,
+.artists,
+.exhibitions{
+    border-top:1px solid rgba(0,0,0,.04);
+}
+/*==================================================
+              STYLE.CSS (PART 3)
+      GALLERY • DETAILS • ABOUT • CONTACT
+==================================================*/
+
+/*==================================================
+                GALLERY PAGE
+==================================================*/
+.gallery{
+    padding:90px 8%;
+    background:#f8f8f8;
+}
+.search-form{
+    max-width:1100px;
+    margin:40px auto 60px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.search-form input{
+    flex:1;
+    min-width:260px;
+    padding:15px 20px;
+    border:1px solid #ddd;
+    border-radius:50px;
+    font-size:16px;
+    transition:.3s;
+}
+.search-form select{
+    min-width:220px;
+    padding:15px 20px;
+    border:1px solid #ddd;
+    border-radius:50px;
+    font-size:16px;
+    transition:.3s;
+}
+.search-form button{
+    background:#ffb400;
+    color:#111;
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+}
+.search-form button:hover{
+    background:#111;
+    color:white;
+}
+.search-form input:focus,
+.search-form select:focus{
+    outline:none;
+    border-color:#ffb400;
+    box-shadow:0 0 12px rgba(255,180,0,.25);
+}
+/*==================================================
+            ARTWORK DETAILS PAGE
+==================================================*/
+.details-section{
+    background:#fafafa;
+    padding:90px 8%;
+}
+.details-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:flex-start;
+    gap:60px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+.details-container img{
+    width:420px;
+    height:560px;
+    object-fit:cover;
+    border-radius:15px;
+    flex-shrink:0;
+    transition:.45s;
+}
+.details-container img:hover{
+    transform:scale(1.05);
+}
+.details-content{
+    flex:1;
+}
+.details-content h2{
+    text-align:left;
+    font-size:44px;
+    margin-bottom:15px;
+    color:#222;
+}
+.details-content h3{
+    font-size:26px;
+    margin-bottom:25px;
+}
+.details-content h3 a{
+    color:#ff9800;
+    transition:.3s;
+}
+.details-content h3 a:hover{
+    color:#111;
+}
+.details-content p{
+    margin-bottom:18px;
+    color:#555;
+    line-height:1.9;
+    font-size:18px;
+}
+.details-content strong{
+    color:#222;
+}
+.back-btn{
+    display:inline-block;
+    margin-top:30px;
+    background:#ffb400;
+    color:#111;
+    padding:14px 30px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.35s;
+}
+.back-btn:hover{
+    background:#111;
+    color:white;
+}
+/*==================================================
+                ABOUT PAGE
+==================================================*/
+.about-section{
+    background:#ffffff;
+}
+.about-container{
+    max-width:1200px;
+    margin:auto;
+}
+.about-container h1{
+    font-size:52px;
+    text-align:center;
+    margin-bottom:40px;
+    color:#222;
+}
+.about-container h2{
+    font-size:34px;
+    margin-top:50px;
+    margin-bottom:20px;
+    color:#222;
+}
+.about-container p{
+    font-size:18px;
+    color:#555;
+    line-height:1.9;
+}
+.about-container ul{
+    margin-left:25px;
+    line-height:2;
+    color:#555;
+}
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-top:40px;
+}
+.feature-card{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+    transition:.35s;
+}
+.feature-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 35px rgba(255,180,0,.25);
+}
+.feature-card h3{
+    margin-bottom:15px;
+    color:#222;
+}
+.feature-card p{
+    color:#666;
+}
+/*==================================================
+                CONTACT PAGE
+==================================================*/
+.contact-section{
+    background:#fafafa;
+    padding:90px 8%;
+}
+.contact-section h1{
+    text-align:center;
+    font-size:48px;
+    margin-bottom:20px;
+}
+.contact-section>p{
+    text-align:center;
+    color:#666;
+    margin-bottom:45px;
+}
+.contact-form{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:16px;
+    margin-bottom:20px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    transition:.3s;
+}
+.contact-form textarea{
+    resize:vertical;
+    min-height:180px;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:none;
+    border-color:#ffb400;
+    box-shadow:0 0 12px rgba(255,180,0,.25);
+}
+.contact-form button{
+    background:#ffb400;
+    color:#111;
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+}
+.contact-form button:hover{
+    background:#111;
+    color:white;
+}
+.success-message{
+    max-width:700px;
+    margin:0 auto 30px;
+    background:#e8f5e9;
+    color:#2e7d32;
+    border-left:5px solid #2e7d32;
+    padding:18px 20px;
+    border-radius:10px;
+}
+/*==================================================
+              STYLE.CSS (PART 4)
+     ADMIN • LOGIN • FORMS • ERROR • FOOTER
+==================================================*/
+
+/*==================================================
+                ADMIN HERO
+==================================================*/
+.admin-hero{
+    background:
+    linear-gradient(rgba(0,0,0,.60),
+    rgba(0,0,0,.60)),
+    url("/images/hero/hero.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:120px 20px;
+}
+.admin-hero h1{
+    font-size:56px;
+    margin-bottom:18px;
+}
+.admin-hero p{
+    font-size:21px;
+    max-width:800px;
+    margin:auto;
+    color:#f2f2f2;
+}
+/*==================================================
+            DASHBOARD CARDS
+==================================================*/
+.dashboard-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin:50px 0;
+}
+.dashboard-card{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(0,0,0,.10);
+    transition:.35s;
+}
+.dashboard-card:hover{
+    transform:translateY(-10px);
+}
+.dashboard-card h3{
+    color:#444;
+    margin-bottom:20px;
+    font-size:24px;
+}
+.dashboard-card p{
+    font-size:46px;
+    color:#ff9800;
+    font-weight:700;
+}
+/*==================================================
+              ADMIN TABLE
+==================================================*/
+.admin-table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+.admin-table th{
+    background:#111;
+    color:white;
+    padding:18px;
+    text-align:left;
+    font-size:17px;
+}
+.admin-table td{
+    padding:18px;
+    border-bottom:1px solid #eee;
+}
+.admin-table tr{
+    transition:.25s;
+}
+.admin-table tr:hover{
+    background:#fff9ef;
+}
+/*==================================================
+               BUTTONS
+==================================================*/
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    background:#ffb400;
+    color:#111;
+    border-radius:50px;
+    font-weight:600;
+    transition:.35s;
+    margin:10px 8px;
+}
+.btn:hover{
+    background:#111;
+    color:white;
+}
+.edit-btn{
+    background:#2196f3;
+    color:white;
+    padding:10px 18px;
+    border-radius:30px;
+    transition:.3s;
+}
+.edit-btn:hover{
+    background:#1565c0;
+}
+.delete-art-btn,
+.delete-btn{
+    background:#e53935;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    transition:.3s;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-width:120px;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:600;
+}
+.delete-art-btn:hover,
+.delete-btn:hover{
+    background:#c62828;
+    transform:translateY(-2px);
+}
+.logout-btn{
+    background:#e53935;
+    color:white;
+    border:none;
+    padding:12px 26px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+.logout-btn:hover{
+    background:#b71c1c;
+}
+/*==================================================
+             ARTWORK FORM
+==================================================*/
+.form-container{
+    max-width:800px;
+    margin:80px auto;
+    background:white;
+    padding:45px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+.form-container h2{
+    text-align:center;
+    margin-bottom:35px;
+    font-size:36px;
+}
+.form-group{
+    margin-bottom:22px;
+}
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+}
+.form-group textarea{
+    min-height:150px;
+    resize:vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus{
+    outline:none;
+    border-color:#ffb400;
+    box-shadow:0 0 10px rgba(255,180,0,.25);
+}
+.form-buttons{
+    display:flex;
+    gap:18px;
+    margin-top:30px;
+}
+.save-btn{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:14px 28px;
+    border-radius:40px;
+    cursor:pointer;
+    transition:.35s;
+}
+.save-btn:hover{
+    background:#1b5e20;
+}
+.cancel-btn{
+    background:#e53935;
+    color:white;
+    padding:14px 28px;
+    border-radius:40px;
+    transition:.35s;
+}
+.cancel-btn:hover{
+    background:#b71c1c;
+}
+/*==================================================
+              LOGIN PAGE
+==================================================*/
+.login-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    linear-gradient(rgba(0,0,0,.65),
+    rgba(0,0,0,.65)),
+    url("/images/hero/hero.jpg");
+    background-size:cover;
+}
+.login-box{
+    width:420px;
+    background:white;
+    padding:45px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+.login-box h2{
+    margin-bottom:35px;
+}
+.login-box input{
+    width:100%;
+    padding:15px;
+    margin-bottom:18px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+.login-box input:focus{
+    outline:none;
+    border-color:#ffb400;
+}
+.login-box button{
+    width:100%;
+    background:#ffb400;
+    color:#111;
+    border:none;
+    padding:15px;
+    border-radius:50px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+}
+.login-box button:hover{
+    background:#111;
+    color:white;
+}
+/*==================================================
+              ERROR PAGES
+==================================================*/
+.error-page{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+    linear-gradient(rgba(0,0,0,.70),
+    rgba(0,0,0,.70)),
+    url("/images/hero/hero.jpg");
+    background-size:cover;
+    color:white;
+    padding:40px;
+}
+.error-page h1{
+    font-size:140px;
+    color:#ffb400;
+}
+.error-page h2{
+    font-size:42px;
+    margin:20px 0;
+}
+.error-page p{
+    max-width:600px;
+    font-size:20px;
+    color:#ddd;
+    margin-bottom:35px;
+}
+.error-box{
+    max-width:700px;
+    margin:auto;
+}
+.error-box h1{
+    color:#ffb000;
+}
+.error-box h2{
+    color:#ffffff;
+    text-align:center;
+}
+.error-box p{
+    color:#ffffff;
+}
+.error-box h1,
+.error-box h2,
+.error-box p{
+    text-shadow:2px 2px 8px rgba(0,0,0,0.8);
+}
+/*==================================================
+               FOOTER
+==================================================*/
+.footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:28px;
+    border-top:4px solid #ffb400;
+    margin-top:auto;
+}
+.footer p{
+    font-size:15px;
+    letter-spacing:1px;
+}
+/*==================================================
+            LOADING SPINNER
+==================================================*/
+.loading{
+    display:none;
+    width:18px;
+    height:18px;
+    margin-left:10px;
+    border:3px solid rgba(255,255,255,.4);
+    border-top:3px solid white;
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+}
+button.loading-active .loading{
+    display:inline-block;
+}
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+/*==================================================
+             FADE ANIMATION
+==================================================*/
+.fade-in{
+    animation:fadeIn .8s ease;
+}
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/*==================================================
+              STYLE.CSS (PART 5)
+      FINAL RESPONSIVE & PROFESSIONAL POLISH
+==================================================*/
+
+/*==================================================
+              GLOBAL TRANSITIONS
+==================================================*/
+*{
+    transition:
+        background-color .3s ease,
+        color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+/*==================================================
+                IMAGE EFFECTS
+==================================================*/
+img{
+    display:block;
+    max-width:100%;
+}
+.card img,
+.artist-card img,
+.highlight-card img,
+.details-container img{
+    transition:transform .45s ease;
+}
+.card:hover img,
+.artist-card:hover img,
+.highlight-card:hover img,
+.details-container:hover img{
+    transform:scale(1.05);
+}
+/*==================================================
+                 BUTTON EFFECTS
+==================================================*/
+.primary-btn,
+.secondary-btn,
+.view-btn,
+.btn,
+.save-btn,
+.cancel-btn,
+.logout-btn,
+.search-form button,
+.contact-form button,
+.login-box button{
+    cursor:pointer;
+    transition:all .3s ease;
+}
+.primary-btn:hover,
+.secondary-btn:hover,
+.view-btn:hover,
+.btn:hover,
+.save-btn:hover,
+.cancel-btn:hover,
+.logout-btn:hover,
+.search-form button:hover,
+.contact-form button:hover,
+.login-box button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.18);
+}
+.primary-btn:active,
+.secondary-btn:active,
+.view-btn:active,
+.btn:active{
+    transform:scale(.97);
+}
+/*==================================================
+              NAVBAR HOVER
+==================================================*/
+nav ul li a{
+    position:relative;
+}
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#ffb400;
+    transition:.3s;
+}
+nav ul li a:hover::after{
+    width:100%;
+}
+/*==================================================
+                 LOGO EFFECT
+==================================================*/
+.logo{
+    transition:.35s;
+}
+.logo:hover{
+    transform:scale(1.04);
+}
+/*==================================================
+              TABLE ROW EFFECT
+==================================================*/
+.admin-table tr{
+    transition:.25s;
+}
+.admin-table tr:hover{
+    background:#fff9ef;
+}
+/*==================================================
+            FORM FIELD EFFECT
+==================================================*/
+input,
+textarea,
+select{
+    transition:.3s;
+}
+input:focus,
+textarea:focus,
+select:focus{
+    outline:none;
+    transform:scale(1.01);
+}
+/*==================================================
+            CUSTOM SCROLLBAR
+==================================================*/
+::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-track{
+    background:#efefef;
+}
+::-webkit-scrollbar-thumb{
+    background:#999;
+    border-radius:20px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background:#ffb400;
+}
+/*==================================================
+            TEXT SELECTION
+==================================================*/
+::selection{
+    background:#ffb400;
+    color:black;
+}
+/*==================================================
+            TABLET RESPONSIVE
+==================================================*/
+@media (max-width:992px){
+    .hero h1{
+        font-size:50px;
+    }
+    .hero p{
+        font-size:20px;
+    }
+    .artwork-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .highlight-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .exhibition-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .dashboard-cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .details-container{
+        flex-direction:column;
+        text-align:center;
+        align-items:center;
+    }
+    .details-content{
+        width:100%;
+    }
+    .details-content h2{
+        text-align:center;
+    }
+}
+/*==================================================
+            MOBILE RESPONSIVE
+==================================================*/
+@media (max-width:768px){
+    nav{
+        flex-direction:column;
+        gap:20px;
+        padding:18px;
+    }
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+    }
+    .hero{
+        height:auto;
+        padding:140px 25px;
+    }
+    .hero h1{
+        font-size:40px;
+    }
+    .hero p{
+        font-size:18px;
+    }
+    .buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+    .artwork-container{
+        grid-template-columns:1fr;
+    }
+    .highlight-grid{
+        grid-template-columns:1fr;
+    }
+    .artist-container{
+        flex-direction:column;
+        align-items:center;
+    }
+    .exhibition-container{
+        grid-template-columns:1fr;
+    }
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+    .dashboard-cards{
+        grid-template-columns:1fr;
+    }
+    .details-container{
+        padding:25px;
+    }
+    .details-container img{
+        width:100%;
+        max-width:380px;
+        height:auto;
+    }
+    .search-form{
+        flex-direction:column;
+    }
+}
+/*==================================================
+            SMALL MOBILE
+==================================================*/
+@media (max-width:480px){
+    .hero h1{
+        font-size:34px;
+    }
+    .gallery-hero h1{
+        font-size:34px;
+    }
+    .admin-hero h1{
+        font-size:36px;
+    }
+    .page-title{
+        font-size:34px;
+    }
+    .about-container h1{
+        font-size:34px;
+    }
+    .details-content h2{
+        font-size:32px;
+    }
+    .details-content h3{
+        font-size:22px;
+    }
+    .card-content{
+        padding:20px;
+    }
+    .contact-form{
+        padding:28px;
+    }
+    .login-box{
+        width:90%;
+        padding:35px;
+    }
+}
+/*==================================================
+            FINAL ANIMATIONS
+==================================================*/
+.hero h1{
+    animation:slideDown .9s ease;
+}
+.hero p{
+    animation:fadeText 1.2s ease;
+}
+.buttons{
+    animation:fadeButtons 1.5s ease;
+}
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+@keyframes fadeText{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+@keyframes fadeButtons{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/*==================================================
+                  END OF FILE
+==================================================*/

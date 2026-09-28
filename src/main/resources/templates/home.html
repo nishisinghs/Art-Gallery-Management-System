@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Art Gallery Management System</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<!-- =========================
+        Navigation Bar
+========================== -->
+
+<nav>
+
+    <a th:href="@{/}" class="logo">
+        🎨 Art Gallery
+    </a>
+
+    <ul>
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/gallery}">Gallery</a></li>
+        <li><a th:href="@{/artists}">Artists</a></li>
+        <li><a th:href="@{/about}">About</a></li>
+        <li><a th:href="@{/contact}">Contact</a></li>
+        <li><a th:href="@{/admin}">Admin</a></li>
+    </ul>
+
+</nav>
+
+<!-- =========================
+        Hero Section
+========================== -->
+
+<section class="hero">
+
+    <div class="overlay">
+
+        <h1>Experience Art Like Never Before</h1>
+
+        <p>
+            Discover timeless masterpieces, emerging artists,
+            and breathtaking collections from around the world.
+        </p>
+
+        <div class="buttons">
+
+            <a th:href="@{/gallery}" class="primary-btn">
+                Explore Gallery
+            </a>
+
+            <a th:href="@{/about}" class="secondary-btn">
+                Learn More
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+      Featured Artworks
+========================== -->
+
+<section class="featured">
+
+    <h2>Featured Artworks</h2>
+
+    <div class="artwork-container">
+
+        <div class="card">
+
+            <img src="/images/artworks/art1.jpg" alt="Golden Horizon">
+
+            <h3>Golden Horizon</h3>
+
+            <p>
+                A breathtaking landscape inspired by nature's
+                warm golden sunsets.
+            </p>
+
+            <a th:href="@{/artwork/1}" class="view-btn">
+                View Details
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <img src="/images/artworks/art2.jpg" alt="Silent Thoughts">
+
+            <h3>Silent Thoughts</h3>
+
+            <p>
+                An emotional oil painting expressing peace,
+                silence and imagination.
+            </p>
+
+            <a th:href="@{/artwork/2}" class="view-btn">
+                View Details
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <img src="/images/artworks/art3.jpg" alt="Vivid Dreams">
+
+            <h3>Vivid Dreams</h3>
+
+            <p>
+                A colorful abstract artwork celebrating
+                creativity and freedom.
+            </p>
+
+            <a th:href="@{/artwork/3}" class="view-btn">
+                View Details
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+        Featured Artists
+========================== -->
+
+<section class="artists">
+
+    <h2>Meet Our Featured Artists</h2>
+
+    <div class="artist-container">
+
+        <div class="artist-card">
+
+            <img src="/images/artists/artist1.jpg" alt="Emma Wilson">
+
+            <h3>Emma Wilson</h3>
+
+            <p>
+                Specializes in vibrant contemporary landscape
+                paintings inspired by nature.
+            </p>
+
+        </div>
+
+        <div class="artist-card">
+
+            <img src="/images/artists/artist2.jpg" alt="Sophia Brown">
+
+            <h3>Sophia Brown</h3>
+
+            <p>
+                Known for expressive oil paintings blending
+                realism with emotion.
+            </p>
+
+        </div>
+
+        <div class="artist-card">
+
+            <img src="/images/artists/artist3.jpg" alt="Diana Robert">
+
+            <h3>Diana Robert</h3>
+
+            <p>
+                Creates bold abstract artworks using vivid
+                colors and modern textures.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+      Gallery Highlights
+========================== -->
+
+<!-- Gallery Highlights -->
+<section class="highlights">
+
+    <h2>Gallery Highlights</h2>
+
+    <div class="highlight-container">
+
+        <div class="highlight-card">
+            <div class="highlight-icon">🎨</div>
+            <h3>3</h3>
+            <p>Featured Artworks</p>
+        </div>
+
+        <div class="highlight-card">
+            <div class="highlight-icon">👨‍🎨</div>
+            <h3>3</h3>
+            <p>Artists</p>
+        </div>
+
+        <div class="highlight-card">
+            <div class="highlight-icon">🖼️</div>
+            <h3>1</h3>
+            <p>Gallery Collection</p>
+        </div>
+
+        <div class="highlight-card">
+            <div class="highlight-icon">⭐</div>
+            <h3>100%</h3>
+            <p>Original Artwork</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+      Upcoming Exhibitions
+========================== -->
+
+<section class="exhibitions">
+
+    <h2>Upcoming Exhibitions</h2>
+
+    <div class="exhibition-container">
+
+        <div class="exhibition-card">
+
+            <h3>Summer Modern Art Exhibition</h3>
+
+            <p><strong>Date:</strong> July 20 – July 30</p>
+
+            <p><strong>Venue:</strong> National Art Museum, New Delhi</p>
+
+            <a th:href="@{/about}" class="view-btn">
+                Learn More
+            </a>
+
+        </div>
+
+        <div class="exhibition-card">
+
+            <h3>Contemporary Sculpture Show</h3>
+
+            <p><strong>Date:</strong> August 10 – August 20</p>
+
+            <p><strong>Venue:</strong> Mumbai Art Gallery</p>
+
+            <a th:href="@{/about}" class="view-btn">
+                Learn More
+            </a>
+
+        </div>
+
+        <div class="exhibition-card">
+
+            <h3>Digital Art Festival</h3>
+
+            <p><strong>Date:</strong> September 5 – September 15</p>
+
+            <p><strong>Venue:</strong> Bengaluru Art Center</p>
+
+            <a th:href="@{/about}" class="view-btn">
+                Learn More
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+      Inspirational Quote
+========================== -->
+
+<section class="quote">
+
+    <h2>
+        "Art enables us to find ourselves and lose ourselves at the same time."
+    </h2>
+
+</section>
+
+<!-- =========================
+          Footer
+========================== -->
+
+<footer class="footer">
+
+    <p>
+
+        © 2026 Art Gallery Management System
+
+        <br><br>
+
+        Built with Java • Spring Boot • Thymeleaf • HTML5 • CSS3 • JavaScript • MySQL
+
+    </p>
+
+</footer>
+
+</body>
+</html>

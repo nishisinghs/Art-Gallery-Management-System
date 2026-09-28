@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Featured Artists | Art Gallery Management System</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<!-- =========================
+        Navigation Bar
+========================== -->
+
+<nav>
+
+    <a th:href="@{/}" class="logo">
+        🎨 Art Gallery
+    </a>
+
+    <ul>
+
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/gallery}">Gallery</a></li>
+        <li><a th:href="@{/artists}">Artists</a></li>
+        <li><a th:href="@{/about}">About</a></li>
+        <li><a th:href="@{/contact}">Contact</a></li>
+        <li><a th:href="@{/admin}">Admin</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- =========================
+        Banner
+========================== -->
+
+<section class="gallery-hero">
+
+    <h1>Meet Our Featured Artists</h1>
+
+    <p>
+
+        Discover the talented artists behind our carefully curated
+        collection of paintings and digital artworks.
+
+    </p>
+
+</section>
+
+<!-- =========================
+      Featured Artists
+========================== -->
+
+<section class="artists">
+
+    <h2>Featured Artists</h2>
+
+    <div class="artist-container">
+
+        <!-- Artist 1 -->
+
+        <div class="artist-card">
+
+            <img th:src="@{/images/artists/artist1.jpg}"
+                 alt="Emma Wilson">
+
+            <h3>Emma Wilson</h3>
+
+            <p>
+
+                Emma Wilson is a contemporary abstract artist known for her
+                vibrant colour compositions and expressive brushwork.
+                Her paintings explore emotion, movement and the relationship
+                between colour and memory.
+
+            </p>
+
+            <p>
+
+                <strong>Art Style:</strong>
+
+                Contemporary Abstract Art
+
+            </p>
+
+            <a th:href="@{/gallery}" class="view-btn">
+
+                View Gallery
+
+            </a>
+
+        </div>
+
+        <!-- Artist 2 -->
+
+        <div class="artist-card">
+
+            <img th:src="@{/images/artists/artist2.jpg}"
+                 alt="Sophia Brown">
+
+            <h3>Sophia Brown</h3>
+
+            <p>
+
+                Sophia Brown specializes in beautiful landscape paintings
+                inspired by nature and travel. Her work captures peaceful
+                scenery, changing light and the beauty of mountains,
+                rivers and forests.
+
+            </p>
+
+            <p>
+
+                <strong>Art Style:</strong>
+
+                Landscape & Oil Paintings
+
+            </p>
+
+            <a th:href="@{/gallery}" class="view-btn">
+
+                View Gallery
+
+            </a>
+
+        </div>
+
+        <!-- Artist 3 -->
+
+        <div class="artist-card">
+
+            <img th:src="@{/images/artists/artist3.jpg}"
+                 alt="Diana Robert">
+
+            <h3>Diana Robert</h3>
+
+            <p>
+
+                Diana Robert is a modern digital artist who combines
+                traditional painting techniques with digital media.
+                Her creations feature futuristic themes,
+                vivid colours and experimental textures.
+
+            </p>
+
+            <p>
+
+                <strong>Art Style:</strong>
+
+                Digital & Modern Art
+
+            </p>
+
+            <a th:href="@{/gallery}" class="view-btn">
+
+                View Gallery
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+          Footer
+========================== -->
+
+<footer class="footer">
+
+    <p>
+
+        © 2026 Art Gallery Management System
+
+        <br><br>
+
+        Built with Java • Spring Boot • Thymeleaf • HTML5 • CSS3 • JavaScript • MySQL
+
+    </p>
+
+</footer>
+
+</body>
+
+</html>

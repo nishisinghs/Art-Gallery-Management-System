@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>404 - Page Not Found | Art Gallery Management System</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <a th:href="@{/}" class="logo">
+        🎨 Art Gallery
+    </a>
+
+    <ul>
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/gallery}">Gallery</a></li>
+        <li><a th:href="@{/artists}">Artists</a></li>
+        <li><a th:href="@{/about}">About</a></li>
+        <li><a th:href="@{/contact}">Contact</a></li>
+    </ul>
+
+</nav>
+
+<section class="error-page">
+
+    <div class="error-box">
+
+        <h1>404</h1>
+
+        <h2>Oops! The page could not be found.</h2>
+
+        <p>
+            The page you are trying to access doesn't exist or may have been moved.
+        </p>
+
+        <a th:href="@{/}" class="btn">
+            🏠 Return to Home
+        </a>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+    <p>&copy; 2026 Art Gallery Management System</p>
+    <br><br>
+    Built with Java • Spring Boot • Thymeleaf • HTML5 • CSS3 • JavaScript • MySQL
+</footer>
+
+</body>
+
+</html>
